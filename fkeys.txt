@@ -1,0 +1,45 @@
+"
+
+ALTER TABLE SalesFact 
+ADD CONSTRAINT fk_SalesFact_CustomerDimension
+FOREIGN KEY (CustomerID)
+REFERENCES CustomerDimension(CustomerID)
+ON DELETE CASCADE;
+
+ALTER TABLE SalesFact 
+ADD CONSTRAINT fk_SalesFact_ShippperDimension
+FOREIGN KEY (ShipperID)
+REFERENCES ShippperDimension(ShipperID)
+ON DELETE CASCADE;
+
+ALTER TABLE SalesFact 
+ADD CONSTRAINT fk_SalesFact_DateDimension
+FOREIGN KEY (DateID)
+REFERENCES DateDimension(DateID)
+ON DELETE CASCADE;
+
+ALTER TABLE SalesFact 
+ADD CONSTRAINT fk_SalesFact_ProductDimension
+FOREIGN KEY (ProductID)
+REFERENCES ProductDimension(ProductID)
+ON DELETE CASCADE;
+
+ALTER TABLE InventoryFact 
+ADD CONSTRAINT fk_InventoryFact_ProductDimension
+FOREIGN KEY (ProductID)
+REFERENCES ProductDimension(ProductID)
+ON DELETE CASCADE;
+
+ALTER TABLE InventoryFact 
+ADD CONSTRAINT fk_InventoryFact_DateDimension
+FOREIGN KEY (DateID)
+REFERENCES DateDimension(DateID)
+ON DELETE CASCADE;
+
+ALTER TABLE InventoryFact 
+ADD CONSTRAINT fk_InventoryFact_SupplierDimension
+FOREIGN KEY (SupplierID)
+REFERENCES SupplierDimension(SupplierID)
+ON DELETE CASCADE;
+
+"
